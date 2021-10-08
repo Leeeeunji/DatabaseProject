@@ -15,7 +15,7 @@ CREATE TABLE TEACHER (
 	Phone_number 	CHAR(11) 	    NOT NULL,
 	Name 			VARCHAR(30)  	NOT NULL,
     Address         VARCHAR(100),
-    Major           VARCHAR(10),
+    Major           VARCHAR(30),
     Gender          CHAR            NOT NULL,
     Education       VARCHAR(15),
     PRIMARY KEY (TeacherNumber),
@@ -49,11 +49,9 @@ CREATE TABLE POST (
 CREATE TABLE MATCHING (
     MatchingNumber  VARCHAR(10)     NOT NULL,
     TeacherNumber   VARCHAR(10)     NOT NULL,
-    StudentNumber   VARCHAR(10)     NOT NULL,
     PostNumber      INT             NOT NULL,
     PRIMARY KEY (MatchingNumber),
     FOREIGN KEY (TeacherNumber) REFERENCES TEACHER(TeacherNumber),
-    FOREIGN KEY (StudentNumber) REFERENCES STUDENT(StudentNumber),
     FOREIGN KEY (PostNumber) REFERENCES POST(PostNumber)
 );
 
